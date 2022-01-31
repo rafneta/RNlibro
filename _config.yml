@@ -1,9 +1,13 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
-title: My sample book
-author: The Jupyter Book Community
-logo: logo.png
+title: Redes Neuronales
+author: Rafael Martínez-Martínez and Carlos Josué
+logo: docs/logo.jpg
+copyright: ""
+
+# Solo construye los notebooks del indice
+only_build_toc_files: true
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
@@ -15,14 +19,11 @@ latex:
   latex_documents:
     targetname: book.tex
 
-# Add a bibtex file so that we can create citations
-bibtex_bibfiles:
-  - references.bib
-
 # Information about where the book exists on the web
 repository:
-  url: https://github.com/executablebooks/jupyter-book  # Online location of your book
-  path_to_book: docs  # Optional path to your book, relative to the repository root
+  url: https://github.com/rafneta/RNlibro
+  # Online location of your book
+  path_to_book: ""  # Optional path to your book, relative to the repository root
   branch: master  # Which branch of the repository should be used when creating links (optional)
 
 # Add GitHub buttons to your book
@@ -30,3 +31,23 @@ repository:
 html:
   use_issues_button: true
   use_repository_button: true
+  extra_navbar: ""
+  comments:
+    hypothesis: true
+
+
+launch_buttons:
+  notebook_interface: "classic" # The interface interactive links will activate ["classic", "jupyterlab"]
+  binderhub_url: "https://mybinder.org"
+  colab_url: "https://colab.research.google.com"
+  thebe: true
+
+sphinx:
+  config:
+    language: es
+    html_static_path: ['_static']
+   # html_theme: quantecon_book_theme
+   # html_theme_options:
+   # header_organisation: CIDE
+parse:
+  myst_enable_extensions : ["dollarmath"]  # URI schemes that will be recognised as external URLs in Markdown links

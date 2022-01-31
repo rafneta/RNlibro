@@ -2,7 +2,13 @@
 # Learn more at https://jupyterbook.org/customize/toc.html
 #
 - file: intro
-- file: content
-  sections:
-    - file: markdown
-    - file: notebooks
+
+#- part: Información del curso
+#  chapters:
+- file: docs/encuadre
+#  - file: docs/calendarioLab
+#  - file: docs/Navegacion
+#  - file: docs/Pizarron
+  
+
+#- part: Clases
