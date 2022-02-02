@@ -1,10 +1,10 @@
-![](https://raw.githubusercontent.com/rafneta/CienciaDatosPythonCIDE/master/imagenes/banner.png)
+![](https://raw.githubusercontent.com/rafneta/RNlibro/master/imagenes/banner.png)
 
 # Encuadre
 
 
 
-En la [página principal][rn] del curos de Redes Neuronales se encuetra la información completa.
+En la [página principal][rn] del curso de Redes Neuronales se encuentra la información completa.
 
 
 

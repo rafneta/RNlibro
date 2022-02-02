@@ -1,4 +1,4 @@
-![](https://raw.githubusercontent.com/rafneta/CienciaDatosPythonCIDE/master/imagenes/banner.png)
+![](https://raw.githubusercontent.com/rafneta/RNlibro/master/imagenes/banner.png)
 
 ```{contents}
 :depth: 4
@@ -58,5 +58,5 @@ print("Ejemplo de 'Click to Show'")
 ## Sobre el software del libro
 
 
-Este libro se ha creado con [Jupyter Book](https://jupyterbook.org/intro.html). El cual puede ser una herramienta para presentar el proyecto final. 
+Este libro se ha creado con [Jupyter Book](https://jupyterbook.org/intro.html)
 

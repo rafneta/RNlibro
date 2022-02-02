@@ -1,13 +1,17 @@
-![](https://raw.githubusercontent.com/rafneta/CienciaDatosPythonCIDE/master/imagenes/banner.png)
+![](https://raw.githubusercontent.com/rafneta/RNlibro/master/imagenes/banner.png)
 
 # Sobre este sitio
 
-El presente sitio es para alojar las notas de la asignatura: _Redes Neuronales._ optativa del programa de Ingeniría en Telemática, del [UPIITA-IPN][upiita]   
+El presente sitio es para alojar algunas notas para las asignaturas ([UPIITA-IPN][upiita]):
+
+- _Sistemas Neurodifusos_, asignatura obligatoria de Ingeniería en Mecatrónica
+- _Control Neurodifuso_, asignatura obligatoria de Ingeniería en Biónica
+- _Redes Neuronales_, optativa del programa de Ingeniría en Telemática
 
 
 [upiita]: https://www.upiita.ipn.mx/
     
-Los colaboradores del son: 
+Los colaboradores son: 
 
 
 **Rafael Martínez Martínez** <a href="mailto:ramartinezr@ipn.mx?Subject=RN%20libro%20"><i class="fa fa-envelope" aria-hidden="true"></i></a>
