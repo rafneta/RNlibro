@@ -16,6 +16,9 @@ Tomamos una muestra de la guía rápida de Pandas ([10 minutes to pandas](https:
 ## Creamos objetos
 
 
+import numpy as np
+import pandas as pd
+
 s = pd.Series([1, 3, 5, np.nan, 6, 8])
 s
 
