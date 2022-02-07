@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Inicio rápido módulos &#8212; Machine Learning</title>
+    <title>Clasificación &#8212; Machine Learning</title>
     
   <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -64,8 +64,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Índice" href="../../genindex.html" />
     <link rel="search" title="Búsqueda" href="../../search.html" />
-    <link rel="next" title="NumPy" href="../Notas_Numpy/numpy_rapido.html" />
-    <link rel="prev" title="Navegación en el libro" href="../../docs/Navegacion.html" />
+    <link rel="next" title="Apéndices" href="../secciones/Apendices.html" />
+    <link rel="prev" title="Aprendizaje supervisado" href="apren_su.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -113,8 +113,8 @@
    Navegación en el libro
   </a>
  </li>
- <li class="toctree-l1 current active collapsible-parent">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../secciones/InicioRapidoModulos.html">
    Inicio rápido módulos
   </a>
   <ul class="collapse-ul">
@@ -143,17 +143,17 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../Notas_AprenSu/apren_su.html">
+  <a class="reference internal" href="apren_su.html">
    Aprendizaje supervisado
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Notas_AprenSu/clasificacion.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Clasificación
   </a>
  </li>
  <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="Apendices.html">
+  <a class="reference internal" href="../secciones/Apendices.html">
    Apéndices
   </a>
   <ul class="collapse-ul">
@@ -221,9 +221,9 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/Temas/secciones/InicioRapidoModulos.md"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/Temas/Notas_AprenSu/clasificacion.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Descargar archivo fuente" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
+                data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Imprimir en PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -241,7 +241,7 @@
                 data-toggle="tooltip" data-placement="left" title="Repositorio de origen"><i
                     class="fab fa-github"></i>repositorio</button></a>
         <a class="issues-button"
-            href="https://github.com/rafneta/RNlibro/issues/new?title=Issue%20on%20page%20%2FTemas/secciones/InicioRapidoModulos.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/rafneta/RNlibro/issues/new?title=Issue%20on%20page%20%2FTemas/Notas_AprenSu/clasificacion.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Abrir un problema"><i class="fas fa-lightbulb"></i>Tema abierto</button></a>
         
@@ -257,6 +257,31 @@
 
             <!-- Launch buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/rafneta/RNlibro/master?urlpath=tree/Temas/Notas_AprenSu/clasificacion.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Lanzamiento Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/rafneta/RNlibro/blob/master/Temas/Notas_AprenSu/clasificacion.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Lanzamiento Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Lanzamiento Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
         </div>
 
         <!-- Table of contents -->
@@ -271,16 +296,14 @@
               <div>
                 
   <p><img alt="" src="https://raw.githubusercontent.com/rafneta/RNlibro/master/imagenes/banner.png" /></p>
-<section id="inicio-rapido-modulos">
-<h1>Inicio rápido módulos<a class="headerlink" href="#inicio-rapido-modulos" title="Enlazar permanentemente con este título">¶</a></h1>
-<p>Exploramos los siguiente módulos</p>
+<nav class="contents" id="contenido" role="doc-toc">
+<p class="topic-title">Contenido</p>
 <ul class="simple">
-<li><p>Numpy</p></li>
-<li><p>Pandas</p></li>
-<li><p>Matplotlib</p></li>
+<li><p><a class="reference internal" href="#clasificacion" id="toc-entry-1">Clasificación</a></p></li>
 </ul>
-<div class="toctree-wrapper compound">
-</div>
+</nav>
+<section id="clasificacion">
+<h1><a class="toc-backref" href="#toc-entry-1" role="doc-backlink">Clasificación</a><a class="headerlink" href="#clasificacion" title="Enlazar permanentemente con este título">¶</a></h1>
 </section>
 
     <script type="text/x-thebe-config">
@@ -296,7 +319,7 @@
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./Temas/secciones"
+            path: "./Temas/Notas_AprenSu"
         },
         predefinedOutput: true
     }
@@ -308,8 +331,8 @@
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="../../docs/Navegacion.html" title="previous page">Navegación en el libro</a>
-    <a class='right-next' id="next-link" href="../Notas_Numpy/numpy_rapido.html" title="next page">NumPy</a>
+    <a class='left-prev' id="prev-link" href="apren_su.html" title="previous page">Aprendizaje supervisado</a>
+    <a class='right-next' id="next-link" href="../secciones/Apendices.html" title="next page">Apéndices</a>
 
         </div>
         
