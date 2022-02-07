@@ -1,4 +1,4 @@
-![](https://raw.githubusercontent.com/rafneta/CienciaDatosPythonCIDE/master/imagenes/banner.png)
+![](https://raw.githubusercontent.com/rafneta/RNlibro/master/imagenes/banner.png)
 
 
 # Expresiones regulares
