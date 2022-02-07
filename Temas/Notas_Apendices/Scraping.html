@@ -295,7 +295,7 @@
         
               <div>
                 
-  <p><img alt="" src="https://raw.githubusercontent.com/rafneta/CienciaDatosPythonCIDE/master/imagenes/banner.png" /></p>
+  <p><img alt="" src="https://raw.githubusercontent.com/rafneta/RNlibro/master/imagenes/banner.png" /></p>
 <section id="scraping-html">
 <h1>Scraping, HTML<a class="headerlink" href="#scraping-html" title="Enlazar permanentemente con este título">¶</a></h1>
 <p>Los componentes de una página web, archivo html, css y javascript (en su forma más sencilla)</p>
@@ -422,7 +422,7 @@ background:red;
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on Tag in module bs4.element object:
 
 class Tag(PageElement)
- |  Tag(parser=None, builder=None, name=None, namespace=None, prefix=None, attrs=None, parent=None, previous=None, is_xml=None, sourceline=None, sourcepos=None, can_be_empty_element=None, cdata_list_attributes=None, preserve_whitespace_tags=None)
+ |  Tag(parser=None, builder=None, name=None, namespace=None, prefix=None, attrs=None, parent=None, previous=None, is_xml=None, sourceline=None, sourcepos=None, can_be_empty_element=None, cdata_list_attributes=None, preserve_whitespace_tags=None, interesting_string_types=None)
  |  
  |  Represents an HTML or XML tag that is part of a parse tree, along
  |  with its attributes and contents.
@@ -468,7 +468,7 @@ class Tag(PageElement)
  |  __hash__(self)
  |      Return hash(self).
  |  
- |  __init__(self, parser=None, builder=None, name=None, namespace=None, prefix=None, attrs=None, parent=None, previous=None, is_xml=None, sourceline=None, sourcepos=None, can_be_empty_element=None, cdata_list_attributes=None, preserve_whitespace_tags=None)
+ |  __init__(self, parser=None, builder=None, name=None, namespace=None, prefix=None, attrs=None, parent=None, previous=None, is_xml=None, sourceline=None, sourcepos=None, can_be_empty_element=None, cdata_list_attributes=None, preserve_whitespace_tags=None, interesting_string_types=None)
  |      Basic constructor.
  |      
  |      :param parser: A BeautifulSoup object.
@@ -493,6 +493,13 @@ class Tag(PageElement)
  |          be treated as CDATA if they ever show up on this tag.
  |      :param preserve_whitespace_tags: A list of tag names whose contents
  |          should have their whitespace preserved.
+ |      :param interesting_string_types: This is a NavigableString
+ |          subclass or a tuple of them. When iterating over this
+ |          Tag&#39;s strings in methods like Tag.strings or Tag.get_text,
+ |          these are the types of strings that are interesting enough
+ |          to be considered. The default is to consider
+ |          NavigableString and CData the only interesting string
+ |          subtypes.
  |  
  |  __iter__(self)
  |      Iterating over a Tag iterates over its contents.
@@ -644,8 +651,6 @@ class Tag(PageElement)
  |      the value given for &#39;default&#39; if it doesn&#39;t have that
  |      attribute.
  |  
- |  getText = get_text(self, separator=&#39;&#39;, strip=False, types=(&lt;class &#39;bs4.element.NavigableString&#39;&gt;, &lt;class &#39;bs4.element.CData&#39;&gt;))
- |  
  |  get_attribute_list(self, key, default=None)
  |      The same as get(), but always returns a list.
  |      
@@ -654,22 +659,6 @@ class Tag(PageElement)
  |          on this PageElement.
  |      :return: A list of values, probably containing only a single
  |          value.
- |  
- |  get_text(self, separator=&#39;&#39;, strip=False, types=(&lt;class &#39;bs4.element.NavigableString&#39;&gt;, &lt;class &#39;bs4.element.CData&#39;&gt;))
- |      Get all child strings, concatenated using the given separator.
- |      
- |      :param separator: Strings will be concatenated using this separator.
- |      
- |      :param strip: If True, strings will be stripped before being
- |          concatenated.
- |      
- |      :types: A tuple of NavigableString subclasses. Any strings of
- |          a subclass not found in this list will be ignored. By
- |          default, this means only NavigableString and CData objects
- |          will be considered. So no comments, processing instructions,
- |          stylesheets, etc.
- |      
- |      :return: A string.
  |  
  |  has_attr(self, key)
  |      Does this PageElement have an attribute with the given name?
@@ -795,34 +784,15 @@ class Tag(PageElement)
  |      :param strip: If True, all strings will be stripped before being
  |          yielded.
  |      
- |      :types: A tuple of NavigableString subclasses. Any strings of
+ |      :param types: A tuple of NavigableString subclasses. Any strings of
  |          a subclass not found in this list will be ignored. By
- |          default, this means only NavigableString and CData objects
- |          will be considered. So no comments, processing instructions,
- |          etc.
+ |          default, the subclasses considered are the ones found in
+ |          self.interesting_string_types. If that&#39;s not specified,
+ |          only NavigableString and CData objects will be
+ |          considered. That means no comments, processing
+ |          instructions, etc.
  |      
  |      :yield: A sequence of strings.
- |  
- |  stripped_strings
- |      Yield all strings in the document, stripping them first.
- |      
- |      :yield: A sequence of stripped strings.
- |  
- |  text
- |      Get all child strings, concatenated using the given separator.
- |      
- |      :param separator: Strings will be concatenated using this separator.
- |      
- |      :param strip: If True, strings will be stripped before being
- |          concatenated.
- |      
- |      :types: A tuple of NavigableString subclasses. Any strings of
- |          a subclass not found in this list will be ignored. By
- |          default, this means only NavigableString and CData objects
- |          will be considered. So no comments, processing instructions,
- |          stylesheets, etc.
- |      
- |      :return: A string.
  |  
  |  ----------------------------------------------------------------------
  |  Data descriptors defined here:
@@ -841,6 +811,11 @@ class Tag(PageElement)
  |       return value is the &#39;string&#39; attribute of the child tag,
  |       recursively. If this element is itself a string, has no
  |       children, or has more than one child, return value is None.
+ |  
+ |  ----------------------------------------------------------------------
+ |  Data and other attributes defined here:
+ |  
+ |  DEFAULT_INTERESTING_STRING_TYPES = (&lt;class &#39;bs4.element.NavigableStrin...
  |  
  |  ----------------------------------------------------------------------
  |  Methods inherited from PageElement:
@@ -1051,6 +1026,26 @@ class Tag(PageElement)
  |          up an XMLFormatter or HTMLFormatter in the appropriate
  |          registry.
  |  
+ |  getText = get_text(self, separator=&#39;&#39;, strip=False, types=&lt;object object at 0x7fbf2fbd3f20&gt;)
+ |  
+ |  get_text(self, separator=&#39;&#39;, strip=False, types=&lt;object object at 0x7fbf2fbd3f20&gt;)
+ |      Get all child strings of this PageElement, concatenated using the
+ |      given separator.
+ |      
+ |      :param separator: Strings will be concatenated using this separator.
+ |      
+ |      :param strip: If True, strings will be stripped before being
+ |          concatenated.
+ |      
+ |      :param types: A tuple of NavigableString subclasses. Any
+ |          strings of a subclass not found in this list will be
+ |          ignored. Although there are exceptions, the default
+ |          behavior in most cases is to consider only NavigableString
+ |          and CData objects. That means no comments, processing
+ |          instructions, etc.
+ |      
+ |      :return: A string.
+ |  
  |  insert(self, position, new_child)
  |      Insert a new PageElement in the list of this PageElement&#39;s children.
  |      
@@ -1088,15 +1083,15 @@ class Tag(PageElement)
  |  
  |  previousSiblingGenerator(self)
  |  
- |  replaceWith = replace_with(self, replace_with)
+ |  replaceWith = replace_with(self, *args)
  |  
  |  replaceWithChildren = unwrap(self)
  |  
- |  replace_with(self, replace_with)
- |      Replace this PageElement with another one, keeping the rest of the
- |      tree the same.
+ |  replace_with(self, *args)
+ |      Replace this PageElement with one or more PageElements, keeping the 
+ |      rest of the tree the same.
  |      
- |      :param replace_with: A PageElement.
+ |      :param args: One or more PageElements.
  |      :return: `self`, no longer part of the tree.
  |  
  |  replace_with_children = unwrap(self)
@@ -1178,6 +1173,29 @@ class Tag(PageElement)
  |      
  |      :yield: A sequence of PageElements.
  |  
+ |  stripped_strings
+ |      Yield all strings in this PageElement, stripping them first.
+ |      
+ |      :yield: A sequence of stripped strings.
+ |  
+ |  text
+ |      Get all child strings of this PageElement, concatenated using the
+ |      given separator.
+ |      
+ |      :param separator: Strings will be concatenated using this separator.
+ |      
+ |      :param strip: If True, strings will be stripped before being
+ |          concatenated.
+ |      
+ |      :param types: A tuple of NavigableString subclasses. Any
+ |          strings of a subclass not found in this list will be
+ |          ignored. Although there are exceptions, the default
+ |          behavior in most cases is to consider only NavigableString
+ |          and CData objects. That means no comments, processing
+ |          instructions, etc.
+ |      
+ |      :return: A string.
+ |  
  |  ----------------------------------------------------------------------
  |  Data descriptors inherited from PageElement:
  |  
@@ -1190,6 +1208,11 @@ class Tag(PageElement)
  |  nextSibling
  |  
  |  previousSibling
+ |  
+ |  ----------------------------------------------------------------------
+ |  Data and other attributes inherited from PageElement:
+ |  
+ |  default = &lt;object object&gt;
 </pre></div>
 </div>
 </div>
@@ -1230,7 +1253,7 @@ class Tag(PageElement)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>b&#39;&lt;!DOCTYPE html&gt;\n&lt;!--[if lt IE 7]&gt; &lt;html lang=&quot;es-mx&quot; class=&quot;a-no-js a-lt-ie9 a-lt-ie8 a-lt-ie7&quot;&gt; &lt;![endif]--&gt;\n&lt;!--[if IE 7]&gt;    &lt;html lang=&quot;es-mx&quot; class=&quot;a-no-js a-lt-ie9 a-lt-ie8&quot;&gt; &lt;![endif]--&gt;\n&lt;!--[if IE 8]&gt;    &lt;html lang=&quot;es-mx&quot; class=&quot;a-no-js a-lt-ie9&quot;&gt; &lt;![endif]--&gt;\n&lt;!--[if gt IE 8]&gt;&lt;!--&gt;\n&lt;html class=&quot;a-no-js&quot; lang=&quot;es-mx&quot;&gt;&lt;!--&lt;![endif]--&gt;&lt;head&gt;\n    &lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;\n    &lt;meta charset=&quot;utf-8&quot;&gt;\n    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge,chrome=1&quot;&gt;\n    &lt;title dir=&quot;ltr&quot;&gt;Amazon.com.mx&lt;/title&gt;\n    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width&quot;&gt;\n    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://images-na.ssl-images-amazon.com/images/G/01/AUIClients/AmazonUI-3c913031596ca78a3768f4e934b1cc02ce238101.secure.min._V1_.css&quot;&gt;\n    &lt;script&gt;\n        \n        if (true === true) {\n            var ue_t0 = (+ new Date()),\n                ue_csm = window,\n                ue = { t0: ue_t0, d: function() { return (+new Date() - ue_t0); } },\n                ue_furl = &quot;fls-na.amazon.com&quot;,\n                ue_mid = &quot;A1AM78C64UM0Y8&quot;,\n                ue_sid = (document.cookie.match(/session-id=([0-9-]+)/) || [])[1],\n                ue_sn = &quot;opfcaptcha.amazon.com.mx&quot;,\n                ue_id = \&#39;PBR23TVGDYYW2MHQ8XM6\&#39;;\n        }\n    &lt;/script&gt;\n&lt;/head&gt;\n&lt;body&gt;\n\n&lt;!--\nPara comentar el acceso automatizado a los datos de Amazon, ponte en contacto con api-services-support@amazon.com.\nPara obtener informaci\xc3\xb3n sobre la migraci\xc3\xb3n a nuestras API, consulta nuestras API de Marketplace en https://developer.amazonservices.com/ref=rm_c_sv o nuestra Publicidad de Productos API en https://affiliate-program.amazon.com/gp/advertising/api/detail/main.html/ref=rm_c_ac para ver los casos de uso publicitario.\n\nTo discuss automated access to Amazon data please contact api-services-support@amazon.com.\nFor information about migrating to our APIs refer to our Marketplace APIs at https://developer.amazonservices.com/ref=rm_c_sv, or our Product Advertising API at https://affiliate-program.amazon.com/gp/advertising/api/detail/main.html/ref=rm_c_ac for advertising use cases.\n--&gt;\n\n&lt;!--\nCorreios.DoNotSend\n--&gt;\n\n&lt;div class=&quot;a-container a-padding-double-large&quot; style=&quot;min-width:350px;padding:44px 0 !important&quot;&gt;\n\n    &lt;div class=&quot;a-row a-spacing-double-large&quot; style=&quot;width: 350px; margin: 0 auto&quot;&gt;\n\n        &lt;div class=&quot;a-row a-spacing-medium a-text-center&quot;&gt;&lt;i class=&quot;a-icon a-logo&quot;&gt;&lt;/i&gt;&lt;/div&gt;\n\n        &lt;div class=&quot;a-box a-alert a-alert-info a-spacing-base&quot;&gt;\n            &lt;div class=&quot;a-box-inner&quot;&gt;\n                &lt;i class=&quot;a-icon a-icon-alert&quot;&gt;&lt;/i&gt;\n                &lt;h4&gt;Ingresar los caracteres que aparecen a continuaci\xc3\xb3n&lt;/h4&gt;\n                &lt;p class=&quot;a-last&quot;&gt;Sentimos las molestias. Necesitamos asegurarnos de que no eres un robot. Para obtener los mejores resultados, aseg\xc3\xbarate de que tu navegador acepta las cookies.&lt;/p&gt;\n            &lt;/div&gt;\n        &lt;/div&gt;\n\n        &lt;div class=&quot;a-section&quot;&gt;\n\n            &lt;div class=&quot;a-box a-color-offset-background&quot;&gt;\n                &lt;div class=&quot;a-box-inner a-padding-extra-large&quot;&gt;\n\n                    &lt;form method=&quot;get&quot; action=&quot;/errors/validateCaptcha&quot; name=&quot;&quot;&gt;\n                        &lt;input type=hidden name=&quot;amzn&quot; value=&quot;gnpCDIubilk0jgWxdF1j6Q==&quot; /&gt;&lt;input type=hidden name=&quot;amzn-r&quot; value=&quot;&amp;#047;&quot; /&gt;\n                        &lt;div class=&quot;a-row a-spacing-large&quot;&gt;\n                            &lt;div class=&quot;a-box&quot;&gt;\n                                &lt;div class=&quot;a-box-inner&quot;&gt;\n                                    &lt;h4&gt;Ingresar los caracteres&lt;/h4&gt;\n                                    &lt;div class=&quot;a-row a-text-center&quot;&gt;\n                                        &lt;img src=&quot;https://images-na.ssl-images-amazon.com/captcha/rhnrlggh/Captcha_resxqblswe.jpg&quot;&gt;\n                                    &lt;/div&gt;\n                                    &lt;div class=&quot;a-row a-spacing-base&quot;&gt;\n                                        &lt;div class=&quot;a-row&quot;&gt;\n                                            &lt;div class=&quot;a-column a-span6&quot;&gt;\n                                            &lt;/div&gt;\n                                            &lt;div class=&quot;a-column a-span6 a-span-last a-text-right&quot;&gt;\n                                                &lt;a onclick=&quot;window.location.reload()&quot;&gt;Probar una imagen diferente&lt;/a&gt;\n                                            &lt;/div&gt;\n                                        &lt;/div&gt;\n                                        &lt;input autocomplete=&quot;off&quot; spellcheck=&quot;false&quot; placeholder=&quot;Ingresar los caracteres&quot; id=&quot;captchacharacters&quot; name=&quot;field-keywords&quot; class=&quot;a-span12&quot; autocapitalize=&quot;off&quot; autocorrect=&quot;off&quot; type=&quot;text&quot;&gt;\n                                    &lt;/div&gt;\n                                &lt;/div&gt;\n                            &lt;/div&gt;\n                        &lt;/div&gt;\n\n                        &lt;div class=&quot;a-section a-spacing-extra-large&quot;&gt;\n\n                            &lt;div class=&quot;a-row&quot;&gt;\n                                     &lt;span class=&quot;a-button a-button-primary a-span12&quot;&gt;\n                                         &lt;span class=&quot;a-button-inner&quot;&gt;\n                                             &lt;button type=&quot;submit&quot; class=&quot;a-button-text&quot;&gt;Continuar a Compras&lt;/button&gt;\n                                         &lt;/span&gt;\n                                     &lt;/span&gt;\n                            &lt;/div&gt;\n\n                        &lt;/div&gt;\n                    &lt;/form&gt;\n\n                &lt;/div&gt;\n            &lt;/div&gt;\n\n        &lt;/div&gt;\n\n    &lt;/div&gt;\n\n    &lt;div class=&quot;a-divider a-divider-section&quot;&gt;&lt;div class=&quot;a-divider-inner&quot;&gt;&lt;/div&gt;&lt;/div&gt;\n\n    &lt;div class=&quot;a-text-center a-spacing-small a-size-mini&quot;&gt;\n        &lt;a href=&quot;https://www.amazon.com.mx/gp/help/customer/display.html?ie=UTF8&amp;nodeId=508088&quot;&gt;Condiciones de Uso&lt;/a&gt;\n        &lt;span class=&quot;a-letter-space&quot;&gt;&lt;/span&gt;\n        &lt;span class=&quot;a-letter-space&quot;&gt;&lt;/span&gt;\n        &lt;span class=&quot;a-letter-space&quot;&gt;&lt;/span&gt;\n        &lt;span class=&quot;a-letter-space&quot;&gt;&lt;/span&gt;\n        &lt;a href=&quot;https://www.amazon.com.mx/gp/help/customer/display.html?ie=UTF8&amp;nodeId=468496&quot;&gt;Aviso de Privacidad&lt;/a&gt;\n    &lt;/div&gt;\n    &lt;div class=&quot;a-text-center a-size-mini a-color-secondary&quot;&gt;\n        \xc2\xa9 1996-2020, Amazon.com, Inc. o afiliados. Todos los derechos reservados.\n        &lt;script&gt;\n            if (true === true) {\n                document.write(\&#39;&lt;img src=&quot;https://fls-na.amaz\&#39;+\&#39;on.com/\&#39;+\&#39;1/oc-csi/1/OP/requestId=PBR23TVGDYYW2MHQ8XM6&amp;js=1&quot; /&gt;\&#39;);\n            };\n        &lt;/script&gt;\n        &lt;noscript&gt;\n            &lt;img src=&quot;https://fls-na.amazon.com/1/oc-csi/1/OP/requestId=PBR23TVGDYYW2MHQ8XM6&amp;js=0&quot; /&gt;\n        &lt;/noscript&gt;\n    &lt;/div&gt;\n&lt;/div&gt;\n&lt;script&gt;\n    if (true === true) {\n        var head = document.getElementsByTagName(\&#39;head\&#39;)[0],\n            prefix = &quot;https://images-na.ssl-images-amazon.com/images/G/01/csminstrumentation/&quot;,\n            elem = document.createElement(&quot;script&quot;);\n        elem.src = prefix + &quot;csm-captcha-instrumentation.min.js&quot;;\n        head.appendChild(elem);\n\n        elem = document.createElement(&quot;script&quot;);\n        elem.src = prefix + &quot;rd-script-6d68177fa6061598e9509dc4b5bdd08d.js&quot;;\n        head.appendChild(elem);\n    }\n&lt;/script&gt;\n&lt;/body&gt;&lt;/html&gt;&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>b&#39;&lt;!DOCTYPE html&gt;\n&lt;!--[if lt IE 7]&gt; &lt;html lang=&quot;es-mx&quot; class=&quot;a-no-js a-lt-ie9 a-lt-ie8 a-lt-ie7&quot;&gt; &lt;![endif]--&gt;\n&lt;!--[if IE 7]&gt;    &lt;html lang=&quot;es-mx&quot; class=&quot;a-no-js a-lt-ie9 a-lt-ie8&quot;&gt; &lt;![endif]--&gt;\n&lt;!--[if IE 8]&gt;    &lt;html lang=&quot;es-mx&quot; class=&quot;a-no-js a-lt-ie9&quot;&gt; &lt;![endif]--&gt;\n&lt;!--[if gt IE 8]&gt;&lt;!--&gt;\n&lt;html class=&quot;a-no-js&quot; lang=&quot;es-mx&quot;&gt;&lt;!--&lt;![endif]--&gt;&lt;head&gt;\n    &lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;\n    &lt;meta charset=&quot;utf-8&quot;&gt;\n    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge,chrome=1&quot;&gt;\n    &lt;title dir=&quot;ltr&quot;&gt;Amazon.com.mx&lt;/title&gt;\n    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width&quot;&gt;\n    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://images-na.ssl-images-amazon.com/images/G/01/AUIClients/AmazonUI-3c913031596ca78a3768f4e934b1cc02ce238101.secure.min._V1_.css&quot;&gt;\n    &lt;script&gt;\n        \n        if (true === true) {\n            var ue_t0 = (+ new Date()),\n                ue_csm = window,\n                ue = { t0: ue_t0, d: function() { return (+new Date() - ue_t0); } },\n                ue_furl = &quot;fls-na.amazon.com&quot;,\n                ue_mid = &quot;A1AM78C64UM0Y8&quot;,\n                ue_sid = (document.cookie.match(/session-id=([0-9-]+)/) || [])[1],\n                ue_sn = &quot;opfcaptcha.amazon.com.mx&quot;,\n                ue_id = \&#39;GTJFHT05Q8QG1HXTG762\&#39;;\n        }\n    &lt;/script&gt;\n&lt;/head&gt;\n&lt;body&gt;\n\n&lt;!--\nPara comentar el acceso automatizado a los datos de Amazon, ponte en contacto con api-services-support@amazon.com.\nPara obtener informaci\xc3\xb3n sobre la migraci\xc3\xb3n a nuestras API, consulta nuestras API de Marketplace en https://developer.amazonservices.com/ref=rm_c_sv o nuestra Publicidad de Productos API en https://affiliate-program.amazon.com/gp/advertising/api/detail/main.html/ref=rm_c_ac para ver los casos de uso publicitario.\n\nTo discuss automated access to Amazon data please contact api-services-support@amazon.com.\nFor information about migrating to our APIs refer to our Marketplace APIs at https://developer.amazonservices.com/ref=rm_c_sv, or our Product Advertising API at https://affiliate-program.amazon.com/gp/advertising/api/detail/main.html/ref=rm_c_ac for advertising use cases.\n--&gt;\n\n&lt;!--\nCorreios.DoNotSend\n--&gt;\n\n&lt;div class=&quot;a-container a-padding-double-large&quot; style=&quot;min-width:350px;padding:44px 0 !important&quot;&gt;\n\n    &lt;div class=&quot;a-row a-spacing-double-large&quot; style=&quot;width: 350px; margin: 0 auto&quot;&gt;\n\n        &lt;div class=&quot;a-row a-spacing-medium a-text-center&quot;&gt;&lt;i class=&quot;a-icon a-logo&quot;&gt;&lt;/i&gt;&lt;/div&gt;\n\n        &lt;div class=&quot;a-box a-alert a-alert-info a-spacing-base&quot;&gt;\n            &lt;div class=&quot;a-box-inner&quot;&gt;\n                &lt;i class=&quot;a-icon a-icon-alert&quot;&gt;&lt;/i&gt;\n                &lt;h4&gt;Ingresar los caracteres que aparecen a continuaci\xc3\xb3n&lt;/h4&gt;\n                &lt;p class=&quot;a-last&quot;&gt;Sentimos las molestias. Necesitamos asegurarnos de que no eres un robot. Para obtener los mejores resultados, aseg\xc3\xbarate de que tu navegador acepta las cookies.&lt;/p&gt;\n            &lt;/div&gt;\n        &lt;/div&gt;\n\n        &lt;div class=&quot;a-section&quot;&gt;\n\n            &lt;div class=&quot;a-box a-color-offset-background&quot;&gt;\n                &lt;div class=&quot;a-box-inner a-padding-extra-large&quot;&gt;\n\n                    &lt;form method=&quot;get&quot; action=&quot;/errors/validateCaptcha&quot; name=&quot;&quot;&gt;\n                        &lt;input type=hidden name=&quot;amzn&quot; value=&quot;WO+25XkmG/cmXN3Vr0EW9Q==&quot; /&gt;&lt;input type=hidden name=&quot;amzn-r&quot; value=&quot;&amp;#047;&quot; /&gt;\n                        &lt;div class=&quot;a-row a-spacing-large&quot;&gt;\n                            &lt;div class=&quot;a-box&quot;&gt;\n                                &lt;div class=&quot;a-box-inner&quot;&gt;\n                                    &lt;h4&gt;Ingresar los caracteres&lt;/h4&gt;\n                                    &lt;div class=&quot;a-row a-text-center&quot;&gt;\n                                        &lt;img src=&quot;https://images-na.ssl-images-amazon.com/captcha/cucusdhr/Captcha_acuyuzxlmc.jpg&quot;&gt;\n                                    &lt;/div&gt;\n                                    &lt;div class=&quot;a-row a-spacing-base&quot;&gt;\n                                        &lt;div class=&quot;a-row&quot;&gt;\n                                            &lt;div class=&quot;a-column a-span6&quot;&gt;\n                                            &lt;/div&gt;\n                                            &lt;div class=&quot;a-column a-span6 a-span-last a-text-right&quot;&gt;\n                                                &lt;a onclick=&quot;window.location.reload()&quot;&gt;Probar una imagen diferente&lt;/a&gt;\n                                            &lt;/div&gt;\n                                        &lt;/div&gt;\n                                        &lt;input autocomplete=&quot;off&quot; spellcheck=&quot;false&quot; placeholder=&quot;Ingresar los caracteres&quot; id=&quot;captchacharacters&quot; name=&quot;field-keywords&quot; class=&quot;a-span12&quot; autocapitalize=&quot;off&quot; autocorrect=&quot;off&quot; type=&quot;text&quot;&gt;\n                                    &lt;/div&gt;\n                                &lt;/div&gt;\n                            &lt;/div&gt;\n                        &lt;/div&gt;\n\n                        &lt;div class=&quot;a-section a-spacing-extra-large&quot;&gt;\n\n                            &lt;div class=&quot;a-row&quot;&gt;\n                                     &lt;span class=&quot;a-button a-button-primary a-span12&quot;&gt;\n                                         &lt;span class=&quot;a-button-inner&quot;&gt;\n                                             &lt;button type=&quot;submit&quot; class=&quot;a-button-text&quot;&gt;Continuar a Compras&lt;/button&gt;\n                                         &lt;/span&gt;\n                                     &lt;/span&gt;\n                            &lt;/div&gt;\n\n                        &lt;/div&gt;\n                    &lt;/form&gt;\n\n                &lt;/div&gt;\n            &lt;/div&gt;\n\n        &lt;/div&gt;\n\n    &lt;/div&gt;\n\n    &lt;div class=&quot;a-divider a-divider-section&quot;&gt;&lt;div class=&quot;a-divider-inner&quot;&gt;&lt;/div&gt;&lt;/div&gt;\n\n    &lt;div class=&quot;a-text-center a-spacing-small a-size-mini&quot;&gt;\n        &lt;a href=&quot;https://www.amazon.com.mx/gp/help/customer/display.html?ie=UTF8&amp;nodeId=508088&quot;&gt;Condiciones de Uso&lt;/a&gt;\n        &lt;span class=&quot;a-letter-space&quot;&gt;&lt;/span&gt;\n        &lt;span class=&quot;a-letter-space&quot;&gt;&lt;/span&gt;\n        &lt;span class=&quot;a-letter-space&quot;&gt;&lt;/span&gt;\n        &lt;span class=&quot;a-letter-space&quot;&gt;&lt;/span&gt;\n        &lt;a href=&quot;https://www.amazon.com.mx/gp/help/customer/display.html?ie=UTF8&amp;nodeId=468496&quot;&gt;Aviso de Privacidad&lt;/a&gt;\n    &lt;/div&gt;\n    &lt;div class=&quot;a-text-center a-size-mini a-color-secondary&quot;&gt;\n        \xc2\xa9 1996-2020, Amazon.com, Inc. o afiliados. Todos los derechos reservados.\n        &lt;script&gt;\n            if (true === true) {\n                document.write(\&#39;&lt;img src=&quot;https://fls-na.amaz\&#39;+\&#39;on.com/\&#39;+\&#39;1/oc-csi/1/OP/requestId=GTJFHT05Q8QG1HXTG762&amp;js=1&quot; /&gt;\&#39;);\n            };\n        &lt;/script&gt;\n        &lt;noscript&gt;\n            &lt;img src=&quot;https://fls-na.amazon.com/1/oc-csi/1/OP/requestId=GTJFHT05Q8QG1HXTG762&amp;js=0&quot; /&gt;\n        &lt;/noscript&gt;\n    &lt;/div&gt;\n&lt;/div&gt;\n&lt;script&gt;\n    if (true === true) {\n        var head = document.getElementsByTagName(\&#39;head\&#39;)[0],\n            prefix = &quot;https://images-na.ssl-images-amazon.com/images/G/01/csminstrumentation/&quot;,\n            elem = document.createElement(&quot;script&quot;);\n        elem.src = prefix + &quot;csm-captcha-instrumentation.min.js&quot;;\n        head.appendChild(elem);\n\n        elem = document.createElement(&quot;script&quot;);\n        elem.src = prefix + &quot;rd-script-6d68177fa6061598e9509dc4b5bdd08d.js&quot;;\n        head.appendChild(elem);\n    }\n&lt;/script&gt;\n&lt;/body&gt;&lt;/html&gt;&#39;
 </pre></div>
 </div>
 </div>
