@@ -31,7 +31,7 @@ Esto no es exclusivo de una área de la ciencia, es un enfoque retomado en disti
 
 En este curso, nos interesa el **modelo** y la **evaluación**. Pero es bueno saber que existen otras fases (no sólo las que se pueden observar) en la imagen anterior. En ese sentido, se verán algunas herramientas de las fases que no son nuestro objetivo, pero sin porfundizar en los temas.
 
-Está información se encuentra en los sitios a explorar. 
+Está información se encuentra en los Apéndices. 
 
 
 

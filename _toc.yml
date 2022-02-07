@@ -16,8 +16,14 @@
   
 - file: Temas/Notas_MachineLearning/machine_learning
 
+- file: Temas/Notas_AprenSu/apren_su
+- file: Temas/Notas_AprenSu/clasificacion
 
  
-- file: Temas/secciones/SitiosExplorar
+- file: Temas/secciones/Apendices
   sections:
-  - file: Temas/Notas_Kaggle/kaggle
+  - file: Temas/Notas_Apendices/extracciondatos
+    sections:
+    - file: Temas/Notas_Apendices/ExpresionesRegulares
+    - file: Temas/Notas_Apendices/Scraping
+  - file: Temas/Notas_Apendices/visualizacionkaggle
