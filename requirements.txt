@@ -1,0 +1,14 @@
+matplotlib
+numpy
+scipy
+seaborn
+sympy
+pandas
+statsmodels
+ipywidgets
+jupyter_contrib_nbextensions
+rise
+panel
+bokeh
+holoviews
+plotly
