@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Inicio rápido módulos &#8212; Machine Learning</title>
+    <title>Machine Learning &#8212; Machine Learning</title>
     
   <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -62,8 +62,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Índice" href="../../genindex.html" />
     <link rel="search" title="Búsqueda" href="../../search.html" />
-    <link rel="next" title="NumPy" href="../Notas_Numpy/numpy_rapido.html" />
-    <link rel="prev" title="Navegación en el libro" href="../../docs/Navegacion.html" />
+    <link rel="next" title="Sitios a explorar" href="../secciones/SitiosExplorar.html" />
+    <link rel="prev" title="Matplotlib" href="../Notas_Matplotlib/matplotlib_rapido.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -111,8 +111,8 @@
    Navegación en el libro
   </a>
  </li>
- <li class="toctree-l1 current active collapsible-parent">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../secciones/InicioRapidoModulos.html">
    Inicio rápido módulos
   </a>
   <ul class="collapse-ul">
@@ -135,13 +135,13 @@
   <i class="fas fa-chevron-down">
   </i>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Notas_MachineLearning/machine_learning.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Machine Learning
   </a>
  </li>
  <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="SitiosExplorar.html">
+  <a class="reference internal" href="../secciones/SitiosExplorar.html">
    Sitios a explorar
   </a>
   <ul class="collapse-ul">
@@ -190,9 +190,9 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/Temas/secciones/InicioRapidoModulos.md"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/Temas/Notas_MachineLearning/machine_learning.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Descargar archivo fuente" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
+                data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Imprimir en PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -210,7 +210,7 @@
                 data-toggle="tooltip" data-placement="left" title="Repositorio de origen"><i
                     class="fab fa-github"></i>repositorio</button></a>
         <a class="issues-button"
-            href="https://github.com/rafneta/RNlibro/issues/new?title=Issue%20on%20page%20%2FTemas/secciones/InicioRapidoModulos.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/rafneta/RNlibro/issues/new?title=Issue%20on%20page%20%2FTemas/Notas_MachineLearning/machine_learning.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Abrir un problema"><i class="fas fa-lightbulb"></i>Tema abierto</button></a>
         
@@ -226,11 +226,50 @@
 
             <!-- Launch buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/rafneta/RNlibro/master?urlpath=tree/Temas/Notas_MachineLearning/machine_learning.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Lanzamiento Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/rafneta/RNlibro/blob/master/Temas/Notas_MachineLearning/machine_learning.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Lanzamiento Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Lanzamiento Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
         </div>
 
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contenido
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#flujo-de-trabajo">
+   Flujo de trabajo
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
         </div>
     </div>
 </div>
@@ -240,16 +279,36 @@
               <div>
                 
   <p><img alt="" src="https://raw.githubusercontent.com/rafneta/RNlibro/master/imagenes/banner.png" /></p>
-<section id="inicio-rapido-modulos">
-<h1>Inicio rápido módulos<a class="headerlink" href="#inicio-rapido-modulos" title="Enlazar permanentemente con este título">¶</a></h1>
-<p>Exploramos los siguiente módulos</p>
+<nav class="contents" id="contenido" role="doc-toc">
+<p class="topic-title">Contenido</p>
 <ul class="simple">
-<li><p>Numpy</p></li>
-<li><p>Pandas</p></li>
-<li><p>Matplotlib</p></li>
+<li><p><a class="reference internal" href="#machine-learning" id="toc-entry-1">Machine Learning</a></p>
+<ul>
+<li><p><a class="reference internal" href="#flujo-de-trabajo" id="toc-entry-2">Flujo de trabajo</a></p></li>
 </ul>
-<div class="toctree-wrapper compound">
-</div>
+</li>
+</ul>
+</nav>
+<section id="machine-learning">
+<h1><a class="toc-backref" href="#toc-entry-1" role="doc-backlink">Machine Learning</a><a class="headerlink" href="#machine-learning" title="Enlazar permanentemente con este título">¶</a></h1>
+<blockquote>
+<div><p>«Machine Learning: Campo de estudio que da a las computadoras la habilidad para aprender sin ser explicitamente programadas»
+– Arthur L. Samuel (1959)</p>
+</div></blockquote>
+<p><img alt="" src="https://i0.wp.com/smartboost.com/wp-content/uploads/2020/07/Deep-Learning-vs-Neural-Network.ai-06-2048x1152.png" />
+Tomado de: <em>Deep Learning vs Neural Network: What’s the Difference?</em> <a class="reference external" href="https://smartboost.com/blog/deep-learning-vs-neural-network/"></a></p>
+<p><img alt="" src="https://balkantimes.press/wp-content/uploads/2021/05/mail-2-10.jpg" />
+Tomado de A taxonomy of machine learning and deep learning algorithms</p>
+<p><img alt="" src="https://ars.els-cdn.com/content/image/1-s2.0-S157401372030071X-gr3.jpg" />
+Tomado de Julia language in machine learning: Algorithms, applications, and open issues</p>
+<section id="flujo-de-trabajo">
+<h2><a class="toc-backref" href="#toc-entry-2" role="doc-backlink">Flujo de trabajo</a><a class="headerlink" href="#flujo-de-trabajo" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Dependiendo del problema que se quiera resolver, hay un procedimiento genérico para abordarlo. Existen varias sugerencias y métodos para esto. Pienso que entre más sencillo se piense el procedimiento es mejor de entender, pero sin olvidar que una propuesta de solución se puede complicar de distintas formas.</p>
+<p><img alt="" src="https://miro.medium.com/max/1400/1*bFZ1dIQ2ROifPt6YlyL6uA.png" /></p>
+<p>Esto no es exclusivo de una área de la ciencia, es un enfoque retomado en distintos áreas (Diseño mecatrónico, telmática, Biónica, Administración, etc.)</p>
+<p>En este curso, nos interesa el <strong>modelo</strong> y la <strong>evaluación</strong>. Pero es bueno saber que existen otras fases (no sólo las que se pueden observar) en la imagen anterior. En ese sentido, se verán algunas herramientas de las fases que no son nuestro objetivo, pero sin porfundizar en los temas.</p>
+<p>Está información se encuentra en los sitios a explorar.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -265,7 +324,7 @@
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./Temas/secciones"
+            path: "./Temas/Notas_MachineLearning"
         },
         predefinedOutput: true
     }
@@ -277,8 +336,8 @@
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="../../docs/Navegacion.html" title="previous page">Navegación en el libro</a>
-    <a class='right-next' id="next-link" href="../Notas_Numpy/numpy_rapido.html" title="next page">NumPy</a>
+    <a class='left-prev' id="prev-link" href="../Notas_Matplotlib/matplotlib_rapido.html" title="previous page">Matplotlib</a>
+    <a class='right-next' id="next-link" href="../secciones/SitiosExplorar.html" title="next page">Sitios a explorar</a>
 
         </div>
         
