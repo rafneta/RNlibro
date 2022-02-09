@@ -56,4 +56,5 @@ Lo anterior es un extracto del curso [Data Visualization](https://www.kaggle.com
 
 
 visualizacionplotly
+Tableros
 ```

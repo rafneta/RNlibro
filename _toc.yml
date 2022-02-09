@@ -29,4 +29,5 @@
   - file: Temas/Notas_Apendices/visualizacionkaggle
     sections:
     - file: Temas/Notas_Apendices/visualizacionplotly
+    - file: Temas/Notas_Apendices/Tableros
   
