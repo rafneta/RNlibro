@@ -27,3 +27,6 @@
     - file: Temas/Notas_Apendices/ExpresionesRegulares
     - file: Temas/Notas_Apendices/Scraping
   - file: Temas/Notas_Apendices/visualizacionkaggle
+    sections:
+    - file: Temas/Notas_Apendices/visualizacionplotly
+  

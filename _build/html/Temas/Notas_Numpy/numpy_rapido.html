@@ -176,10 +176,19 @@
     <i class="fas fa-chevron-down">
     </i>
    </li>
-   <li class="toctree-l2">
+   <li class="toctree-l2 collapsible-parent">
     <a class="reference internal" href="../Notas_Apendices/visualizacionkaggle.html">
      Visualización de datos
     </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Notas_Apendices/visualizacionplotly.html">
+       Visualización con plotly
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
    </li>
   </ul>
   <i class="fas fa-chevron-down">
@@ -344,9 +353,11 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;ALLOW_THREADS&#39;,
  &#39;AxisError&#39;,
  &#39;BUFSIZE&#39;,
+ &#39;Bytes0&#39;,
  &#39;CLIP&#39;,
  &#39;ComplexWarning&#39;,
  &#39;DataSource&#39;,
+ &#39;Datetime64&#39;,
  &#39;ERR_CALL&#39;,
  &#39;ERR_DEFAULT&#39;,
  &#39;ERR_IGNORE&#39;,
@@ -380,11 +391,13 @@
  &#39;SHIFT_OVERFLOW&#39;,
  &#39;SHIFT_UNDERFLOW&#39;,
  &#39;ScalarType&#39;,
+ &#39;Str0&#39;,
  &#39;Tester&#39;,
  &#39;TooHardError&#39;,
  &#39;True_&#39;,
  &#39;UFUNC_BUFSIZE_DEFAULT&#39;,
  &#39;UFUNC_PYVALS_NAME&#39;,
+ &#39;Uint64&#39;,
  &#39;VisibleDeprecationWarning&#39;,
  &#39;WRAP&#39;,
  &#39;_NoValue&#39;,
@@ -394,11 +407,13 @@
  &#39;__builtins__&#39;,
  &#39;__cached__&#39;,
  &#39;__config__&#39;,
+ &#39;__deprecated_attrs__&#39;,
  &#39;__dir__&#39;,
  &#39;__doc__&#39;,
+ &#39;__expired_functions__&#39;,
  &#39;__file__&#39;,
  &#39;__getattr__&#39;,
- &#39;__git_revision__&#39;,
+ &#39;__git_version__&#39;,
  &#39;__loader__&#39;,
  &#39;__mkl_version__&#39;,
  &#39;__name__&#39;,
@@ -408,9 +423,11 @@
  &#39;__version__&#39;,
  &#39;_add_newdoc_ufunc&#39;,
  &#39;_distributor_init&#39;,
+ &#39;_financial_names&#39;,
  &#39;_globals&#39;,
  &#39;_mat&#39;,
  &#39;_pytesttester&#39;,
+ &#39;_version&#39;,
  &#39;abs&#39;,
  &#39;absolute&#39;,
  &#39;add&#39;,
@@ -472,11 +489,11 @@
  &#39;blackman&#39;,
  &#39;block&#39;,
  &#39;bmat&#39;,
- &#39;bool&#39;,
  &#39;bool8&#39;,
  &#39;bool_&#39;,
  &#39;broadcast&#39;,
  &#39;broadcast_arrays&#39;,
+ &#39;broadcast_shapes&#39;,
  &#39;broadcast_to&#39;,
  &#39;busday_count&#39;,
  &#39;busday_offset&#39;,
@@ -503,7 +520,6 @@
  &#39;common_type&#39;,
  &#39;compare_chararrays&#39;,
  &#39;compat&#39;,
- &#39;complex&#39;,
  &#39;complex128&#39;,
  &#39;complex256&#39;,
  &#39;complex64&#39;,
@@ -583,7 +599,6 @@
  &#39;flip&#39;,
  &#39;fliplr&#39;,
  &#39;flipud&#39;,
- &#39;float&#39;,
  &#39;float128&#39;,
  &#39;float16&#39;,
  &#39;float32&#39;,
@@ -609,7 +624,6 @@
  &#39;fromstring&#39;,
  &#39;full&#39;,
  &#39;full_like&#39;,
- &#39;fv&#39;,
  &#39;gcd&#39;,
  &#39;generic&#39;,
  &#39;genfromtxt&#39;,
@@ -648,7 +662,6 @@
  &#39;infty&#39;,
  &#39;inner&#39;,
  &#39;insert&#39;,
- &#39;int&#39;,
  &#39;int0&#39;,
  &#39;int16&#39;,
  &#39;int32&#39;,
@@ -661,8 +674,6 @@
  &#39;intersect1d&#39;,
  &#39;intp&#39;,
  &#39;invert&#39;,
- &#39;ipmt&#39;,
- &#39;irr&#39;,
  &#39;is_busday&#39;,
  &#39;isclose&#39;,
  &#39;iscomplex&#39;,
@@ -710,7 +721,6 @@
  &#39;logical_or&#39;,
  &#39;logical_xor&#39;,
  &#39;logspace&#39;,
- &#39;long&#39;,
  &#39;longcomplex&#39;,
  &#39;longdouble&#39;,
  &#39;longfloat&#39;,
@@ -737,7 +747,6 @@
  &#39;min_scalar_type&#39;,
  &#39;minimum&#39;,
  &#39;mintypecode&#39;,
- &#39;mirr&#39;,
  &#39;mkl&#39;,
  &#39;mod&#39;,
  &#39;modf&#39;,
@@ -773,12 +782,9 @@
  &#39;nextafter&#39;,
  &#39;nonzero&#39;,
  &#39;not_equal&#39;,
- &#39;nper&#39;,
- &#39;npv&#39;,
  &#39;numarray&#39;,
  &#39;number&#39;,
  &#39;obj2sctype&#39;,
- &#39;object&#39;,
  &#39;object0&#39;,
  &#39;object_&#39;,
  &#39;ogrid&#39;,
@@ -794,7 +800,6 @@
  &#39;pi&#39;,
  &#39;piecewise&#39;,
  &#39;place&#39;,
- &#39;pmt&#39;,
  &#39;poly&#39;,
  &#39;poly1d&#39;,
  &#39;polyadd&#39;,
@@ -808,7 +813,6 @@
  &#39;polyval&#39;,
  &#39;positive&#39;,
  &#39;power&#39;,
- &#39;ppmt&#39;,
  &#39;printoptions&#39;,
  &#39;prod&#39;,
  &#39;product&#39;,
@@ -817,13 +821,11 @@
  &#39;put&#39;,
  &#39;put_along_axis&#39;,
  &#39;putmask&#39;,
- &#39;pv&#39;,
  &#39;quantile&#39;,
  &#39;r_&#39;,
  &#39;rad2deg&#39;,
  &#39;radians&#39;,
  &#39;random&#39;,
- &#39;rate&#39;,
  &#39;ravel&#39;,
  &#39;ravel_multi_index&#39;,
  &#39;real&#39;,
@@ -857,7 +859,6 @@
  &#39;savez_compressed&#39;,
  &#39;sctype2char&#39;,
  &#39;sctypeDict&#39;,
- &#39;sctypeNA&#39;,
  &#39;sctypes&#39;,
  &#39;searchsorted&#39;,
  &#39;select&#39;,
@@ -894,7 +895,6 @@
  &#39;squeeze&#39;,
  &#39;stack&#39;,
  &#39;std&#39;,
- &#39;str&#39;,
  &#39;str0&#39;,
  &#39;str_&#39;,
  &#39;string_&#39;,
@@ -925,8 +925,6 @@
  &#39;triu_indices_from&#39;,
  &#39;true_divide&#39;,
  &#39;trunc&#39;,
- &#39;typeDict&#39;,
- &#39;typeNA&#39;,
  &#39;typecodes&#39;,
  &#39;typename&#39;,
  &#39;ubyte&#39;,
@@ -940,7 +938,6 @@
  &#39;uintc&#39;,
  &#39;uintp&#39;,
  &#39;ulonglong&#39;,
- &#39;unicode&#39;,
  &#39;unicode_&#39;,
  &#39;union1d&#39;,
  &#39;unique&#39;,
@@ -1800,13 +1797,14 @@ FUNCTIONS
     lstsq(a, b, rcond=&#39;warn&#39;)
         Return the least-squares solution to a linear matrix equation.
         
-        Computes the vector x that approximatively solves the equation
+        Computes the vector `x` that approximatively solves the equation
         ``a @ x = b``. The equation may be under-, well-, or over-determined
         (i.e., the number of linearly independent rows of `a` can be less than,
         equal to, or greater than its number of linearly independent columns).
         If `a` is square and of full rank, then `x` (but for round-off error)
         is the &quot;exact&quot; solution of the equation. Else, `x` minimizes the
-        Euclidean 2-norm :math:`|| b - a x ||`.
+        Euclidean 2-norm :math:`||b - ax||`. If there are multiple minimizing 
+        solutions, the one with the smallest 2-norm :math:`||x||` is returned.
         
         Parameters
         ----------
@@ -1835,8 +1833,8 @@ FUNCTIONS
             Least-squares solution. If `b` is two-dimensional,
             the solutions are in the `K` columns of `x`.
         residuals : {(1,), (K,), (0,)} ndarray
-            Sums of residuals; squared Euclidean 2-norm for each column in
-            ``b - a*x``.
+            Sums of squared residuals: Squared Euclidean 2-norm for each column in
+            ``b - a @ x``.
             If the rank of `a` is &lt; N or M &lt;= N, this is an empty array.
             If `b` is 1-dimensional, this is a (1,) shape array.
             Otherwise the shape is (K,).
@@ -2084,7 +2082,7 @@ FUNCTIONS
         
         See Also
         --------
-        dot : dot multiplication with two arguments.
+        numpy.dot : dot multiplication with two arguments.
         
         References
         ----------
@@ -2587,13 +2585,13 @@ FUNCTIONS
         
         Examples
         --------
-        Solve the system of equations ``3 * x0 + x1 = 9`` and ``x0 + 2 * x1 = 8``:
+        Solve the system of equations ``x0 + 2 * x1 = 1`` and ``3 * x0 + 5 * x1 = 2``:
         
-        &gt;&gt;&gt; a = np.array([[3,1], [1,2]])
-        &gt;&gt;&gt; b = np.array([9,8])
+        &gt;&gt;&gt; a = np.array([[1, 2], [3, 5]])
+        &gt;&gt;&gt; b = np.array([1, 2])
         &gt;&gt;&gt; x = np.linalg.solve(a, b)
         &gt;&gt;&gt; x
-        array([2.,  3.])
+        array([-1.,  1.])
         
         Check that the solution is correct:
         
@@ -2829,7 +2827,7 @@ FUNCTIONS
         True
 
 DATA
-    test = &lt;numpy._pytesttester.PytestTester object&gt;
+    __all__ = [&#39;matrix_power&#39;, &#39;solve&#39;, &#39;tensorsolve&#39;, &#39;tensorinv&#39;, &#39;inv&#39;,...
 
 FILE
     /Users/rafamtz/opt/anaconda3/lib/python3.8/site-packages/numpy/linalg/__init__.py
@@ -2862,7 +2860,7 @@ shape(a)
     
     See Also
     --------
-    alen
+    len
     ndarray.shape : Equivalent array method.
     
     Examples
@@ -3616,7 +3614,7 @@ multi_dot(arrays, *, out=None)
     
     See Also
     --------
-    dot : dot multiplication with two arguments.
+    numpy.dot : dot multiplication with two arguments.
     
     References
     ----------
@@ -3688,7 +3686,9 @@ multi_dot(arrays, *, out=None)
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 1.   5.5 10. ]
-[[ 1.  2.  3.  4.  5.]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 1.  2.  3.  4.  5.]
  [ 6.  7.  8.  9. 10.]
  [11. 12. 13. 14. 15.]]
 [144.  160.5 177.  193.5 210. ]
