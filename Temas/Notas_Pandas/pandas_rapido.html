@@ -4,11 +4,11 @@
 <html lang="es">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pandas &#8212; Machine Learning</title>
     
-  <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -20,14 +20,10 @@
 
     
       
-  <link rel="stylesheet"
-    href="../../_static/vendor/open-sans_all/1.44.1/index.css">
-  <link rel="stylesheet"
-    href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
-    <link rel="stylesheet" href="../../_static/sphinx-book-theme.37f24b989f4638ff9c27c22dc7559d4f.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
@@ -39,24 +35,24 @@
     <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.d3f166471bb80abb5163.js">
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/language_data.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
     <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
     <script src="../../_static/translations.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
-    <script >
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
         const thebe_selector = ".thebe,.cell"
         const thebe_selector_input = "pre,.cell_input div.highlight"
         const thebe_selector_output = ".output,.cell_output"
@@ -66,14 +62,17 @@
     <link rel="search" title="Búsqueda" href="../../search.html" />
     <link rel="next" title="Matplotlib" href="../Notas_Matplotlib/matplotlib_rapido.html" />
     <link rel="prev" title="NumPy" href="../Notas_Numpy/numpy_rapido.html" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="es">
+    
 
-
-
+    <!-- Google Analytics -->
+    
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
     
 
     <div class="container-xl">
@@ -82,27 +81,36 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="../../index.html">
-  
-  <img src="../../_static/logo.jpg" class="logo" alt="logo">
-  
-  
-  <h1 class="site-logo" id="site-title">Machine Learning</h1>
-  
-</a>
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Machine Learning</h1>
+      
+    </a>
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Buscar este libro ..." aria-label="Buscar este libro ..." autocomplete="off" >
-</form>
-<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <ul class="nav sidenav_l1">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../intro.html">
    Sobre este sitio
   </a>
  </li>
 </ul>
-<ul class="current nav sidenav_l1">
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Información general
+ </span>
+</p>
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../docs/encuadre.html">
    Encuadre
@@ -113,11 +121,33 @@
    Navegación en el libro
   </a>
  </li>
- <li class="toctree-l1 current active collapsible-parent">
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Requisitos
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../secciones/ambientespython.html">
+   Ambientes para Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../secciones/instalacion.html">
+   Instalación Anaconda
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="../secciones/InicioRapidoModulos.html">
    Inicio rápido módulos
   </a>
-  <ul class="current collapse-ul">
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="../Notas_Numpy/numpy_rapido.html">
      NumPy
@@ -134,14 +164,26 @@
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Introducción Machine Learning
+ </span>
+</p>
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../Notas_MachineLearning/machine_learning.html">
    Machine Learning
   </a>
  </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Aprendizaje supervisado
+ </span>
+</p>
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../Notas_AprenSu/apren_su.html">
    Aprendizaje supervisado
@@ -152,16 +194,33 @@
    Clasificación
   </a>
  </li>
- <li class="toctree-l1 collapsible-parent">
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Apéndices
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../secciones/Apendices.html">
    Apéndices
   </a>
-  <ul class="collapse-ul">
-   <li class="toctree-l2 collapsible-parent">
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
     <a class="reference internal" href="../Notas_Apendices/extracciondatos.html">
      Extracción de datos
     </a>
-    <ul class="collapse-ul">
+    <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+    <label for="toctree-checkbox-3">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
      <li class="toctree-l3">
       <a class="reference internal" href="../Notas_Apendices/ExpresionesRegulares.html">
        Expresiones regulares
@@ -173,14 +232,17 @@
       </a>
      </li>
     </ul>
-    <i class="fas fa-chevron-down">
-    </i>
    </li>
-   <li class="toctree-l2 collapsible-parent">
+   <li class="toctree-l2 has-children">
     <a class="reference internal" href="../Notas_Apendices/visualizacionkaggle.html">
      Visualización de datos
     </a>
-    <ul class="collapse-ul">
+    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <label for="toctree-checkbox-4">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
      <li class="toctree-l3">
       <a class="reference internal" href="../Notas_Apendices/visualizacionplotly.html">
        Visualización con plotly
@@ -192,15 +254,12 @@
       </a>
      </li>
     </ul>
-    <i class="fas fa-chevron-down">
-    </i>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
 </ul>
 
+    </div>
 </nav> <!-- To handle the deprecated key -->
 
 </div>
@@ -240,7 +299,7 @@
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Imprimir en PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -262,12 +321,12 @@
     </div>
 </div>
 
-
             <!-- Full screen (wrap in <a> to have style consistency -->
-            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Modo de pantalla completa"
-                    title="Modo de pantalla completa"><i
-                        class="fas fa-expand"></i></button></a>
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Modo de pantalla completa"
+        title="Modo de pantalla completa"><i
+            class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
 
@@ -299,13 +358,13 @@
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> Contenido
-        </div>
-        <nav id="bd-toc-nav">
-            <ul class="nav section-nav flex-column">
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contenido
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#creamos-objetos">
    Creamos objetos
@@ -365,49 +424,123 @@
  </li>
 </ul>
 
-        </nav>
-        
+            </nav>
         </div>
     </div>
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Pandas</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contenido </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#creamos-objetos">
+   Creamos objetos
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#desplegar-los-datos">
+   Desplegar los datos
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#seleccion">
+   Selección
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#seleccion-con-etiqueta">
+     Selección con etiqueta
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#seleccion-por-posicion">
+     Selección por posición
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#indexado-logico">
+     Indexado lógico
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#asignacion">
+     Asignación
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#datos-faltantes">
+   Datos Faltantes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#operaciones">
+   Operaciones
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#graficas">
+   Gráficas
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#guardar">
+   Guardar
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
               <div>
                 
   <p><img alt="" src="https://raw.githubusercontent.com/rafneta/RNlibro/master/imagenes/banner.png" /></p>
-<nav class="contents" id="contenido" role="doc-toc">
+<div class="contents topic" id="contenido">
 <p class="topic-title">Contenido</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="#pandas" id="toc-entry-1">Pandas</a></p>
+<li><p><a class="reference internal" href="#pandas" id="id1">Pandas</a></p>
 <ul>
-<li><p><a class="reference internal" href="#creamos-objetos" id="toc-entry-2">Creamos objetos</a></p></li>
-<li><p><a class="reference internal" href="#desplegar-los-datos" id="toc-entry-3">Desplegar los datos</a></p></li>
-<li><p><a class="reference internal" href="#seleccion" id="toc-entry-4">Selección</a></p>
+<li><p><a class="reference internal" href="#creamos-objetos" id="id2">Creamos objetos</a></p></li>
+<li><p><a class="reference internal" href="#desplegar-los-datos" id="id3">Desplegar los datos</a></p></li>
+<li><p><a class="reference internal" href="#seleccion" id="id4">Selección</a></p>
 <ul>
-<li><p><a class="reference internal" href="#seleccion-con-etiqueta" id="toc-entry-5">Selección con etiqueta</a></p></li>
-<li><p><a class="reference internal" href="#seleccion-por-posicion" id="toc-entry-6">Selección por posición</a></p></li>
-<li><p><a class="reference internal" href="#indexado-logico" id="toc-entry-7">Indexado lógico</a></p></li>
-<li><p><a class="reference internal" href="#asignacion" id="toc-entry-8">Asignación</a></p></li>
+<li><p><a class="reference internal" href="#seleccion-con-etiqueta" id="id5">Selección con etiqueta</a></p></li>
+<li><p><a class="reference internal" href="#seleccion-por-posicion" id="id6">Selección por posición</a></p></li>
+<li><p><a class="reference internal" href="#indexado-logico" id="id7">Indexado lógico</a></p></li>
+<li><p><a class="reference internal" href="#asignacion" id="id8">Asignación</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#datos-faltantes" id="toc-entry-9">Datos Faltantes</a></p></li>
-<li><p><a class="reference internal" href="#operaciones" id="toc-entry-10">Operaciones</a></p></li>
-<li><p><a class="reference internal" href="#graficas" id="toc-entry-11">Gráficas</a></p></li>
-<li><p><a class="reference internal" href="#guardar" id="toc-entry-12">Guardar</a></p></li>
+<li><p><a class="reference internal" href="#datos-faltantes" id="id9">Datos Faltantes</a></p></li>
+<li><p><a class="reference internal" href="#operaciones" id="id10">Operaciones</a></p></li>
+<li><p><a class="reference internal" href="#graficas" id="id11">Gráficas</a></p></li>
+<li><p><a class="reference internal" href="#guardar" id="id12">Guardar</a></p></li>
 </ul>
 </li>
 </ul>
-</nav>
-<section id="pandas">
-<h1><a class="toc-backref" href="#toc-entry-1" role="doc-backlink">Pandas</a><a class="headerlink" href="#pandas" title="Enlazar permanentemente con este título">¶</a></h1>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="pandas">
+<h1><a class="toc-backref" href="#id1">Pandas</a><a class="headerlink" href="#pandas" title="Enlazar permanentemente con este título">¶</a></h1>
 <ul class="simple">
 <li><p><a class="reference external" href="https://pandas.pydata.org/docs/index.html">Página principal de Pandas</a></p></li>
 <li><p><a class="reference external" href="https://pandas.pydata.org/docs/reference/index.html">Documentación</a></p></li>
 </ul>
 <p>Tomamos una muestra de la guía rápida de Pandas (<a class="reference external" href="https://pandas.pydata.org/docs/user_guide/10min.html">10 minutes to pandas</a>), junto con un par de complementos.</p>
-<section id="creamos-objetos">
-<h2><a class="toc-backref" href="#toc-entry-2" role="doc-backlink">Creamos objetos</a><a class="headerlink" href="#creamos-objetos" title="Enlazar permanentemente con este título">¶</a></h2>
+<div class="section" id="creamos-objetos">
+<h2><a class="toc-backref" href="#id2">Creamos objetos</a><a class="headerlink" href="#creamos-objetos" title="Enlazar permanentemente con este título">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -1411,9 +1544,9 @@ dtype: object
 <p>32561 rows × 15 columns</p>
 </div></div></div>
 </div>
-</section>
-<section id="desplegar-los-datos">
-<h2><a class="toc-backref" href="#toc-entry-3" role="doc-backlink">Desplegar los datos</a><a class="headerlink" href="#desplegar-los-datos" title="Enlazar permanentemente con este título">¶</a></h2>
+</div>
+<div class="section" id="desplegar-los-datos">
+<h2><a class="toc-backref" href="#id3">Desplegar los datos</a><a class="headerlink" href="#desplegar-los-datos" title="Enlazar permanentemente con este título">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -1911,9 +2044,9 @@ dtype: object
 </table>
 </div></div></div>
 </div>
-</section>
-<section id="seleccion">
-<h2><a class="toc-backref" href="#toc-entry-4" role="doc-backlink">Selección</a><a class="headerlink" href="#seleccion" title="Enlazar permanentemente con este título">¶</a></h2>
+</div>
+<div class="section" id="seleccion">
+<h2><a class="toc-backref" href="#id4">Selección</a><a class="headerlink" href="#seleccion" title="Enlazar permanentemente con este título">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;A&quot;</span><span class="p">]</span>
@@ -2046,8 +2179,8 @@ Freq: D, Name: A, dtype: float64
 </table>
 </div></div></div>
 </div>
-<section id="seleccion-con-etiqueta">
-<h3><a class="toc-backref" href="#toc-entry-5" role="doc-backlink">Selección con etiqueta</a><a class="headerlink" href="#seleccion-con-etiqueta" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="section" id="seleccion-con-etiqueta">
+<h3><a class="toc-backref" href="#id5">Selección con etiqueta</a><a class="headerlink" href="#seleccion-con-etiqueta" title="Enlazar permanentemente con este título">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">dates</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
@@ -2203,9 +2336,9 @@ Name: 2013-01-02 00:00:00, dtype: float64
 </div>
 </div>
 </div>
-</section>
-<section id="seleccion-por-posicion">
-<h3><a class="toc-backref" href="#toc-entry-6" role="doc-backlink">Selección por posición</a><a class="headerlink" href="#seleccion-por-posicion" title="Enlazar permanentemente con este título">¶</a></h3>
+</div>
+<div class="section" id="seleccion-por-posicion">
+<h3><a class="toc-backref" href="#id6">Selección por posición</a><a class="headerlink" href="#seleccion-por-posicion" title="Enlazar permanentemente con este título">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
@@ -2365,9 +2498,9 @@ Name: 2013-01-04 00:00:00, dtype: float64
 </table>
 </div></div></div>
 </div>
-</section>
-<section id="indexado-logico">
-<h3><a class="toc-backref" href="#toc-entry-7" role="doc-backlink">Indexado lógico</a><a class="headerlink" href="#indexado-logico" title="Enlazar permanentemente con este título">¶</a></h3>
+</div>
+<div class="section" id="indexado-logico">
+<h3><a class="toc-backref" href="#id7">Indexado lógico</a><a class="headerlink" href="#indexado-logico" title="Enlazar permanentemente con este título">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;A&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span>
@@ -2510,9 +2643,9 @@ Name: 2013-01-04 00:00:00, dtype: float64
 </table>
 </div></div></div>
 </div>
-</section>
-<section id="asignacion">
-<h3><a class="toc-backref" href="#toc-entry-8" role="doc-backlink">Asignación</a><a class="headerlink" href="#asignacion" title="Enlazar permanentemente con este título">¶</a></h3>
+</div>
+<div class="section" id="asignacion">
+<h3><a class="toc-backref" href="#id8">Asignación</a><a class="headerlink" href="#asignacion" title="Enlazar permanentemente con este título">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="n">index</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="s2">&quot;20130102&quot;</span><span class="p">,</span> <span class="n">periods</span><span class="o">=</span><span class="mi">6</span><span class="p">))</span>
@@ -2611,10 +2744,10 @@ Freq: D, dtype: int64
 </table>
 </div></div></div>
 </div>
-</section>
-</section>
-<section id="datos-faltantes">
-<h2><a class="toc-backref" href="#toc-entry-9" role="doc-backlink">Datos Faltantes</a><a class="headerlink" href="#datos-faltantes" title="Enlazar permanentemente con este título">¶</a></h2>
+</div>
+</div>
+<div class="section" id="datos-faltantes">
+<h2><a class="toc-backref" href="#id9">Datos Faltantes</a><a class="headerlink" href="#datos-faltantes" title="Enlazar permanentemente con este título">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">reindex</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="n">dates</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">4</span><span class="p">],</span> <span class="n">columns</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span> <span class="o">+</span> <span class="p">[</span><span class="s2">&quot;E&quot;</span><span class="p">])</span>
@@ -2877,9 +3010,9 @@ Freq: D, dtype: int64
 </table>
 </div></div></div>
 </div>
-</section>
-<section id="operaciones">
-<h2><a class="toc-backref" href="#toc-entry-10" role="doc-backlink">Operaciones</a><a class="headerlink" href="#operaciones" title="Enlazar permanentemente con este título">¶</a></h2>
+</div>
+<div class="section" id="operaciones">
+<h2><a class="toc-backref" href="#id10">Operaciones</a><a class="headerlink" href="#operaciones" title="Enlazar permanentemente con este título">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
@@ -2992,9 +3125,9 @@ Freq: D, dtype: float64
 </table>
 </div></div></div>
 </div>
-</section>
-<section id="graficas">
-<h2><a class="toc-backref" href="#toc-entry-11" role="doc-backlink">Gráficas</a><a class="headerlink" href="#graficas" title="Enlazar permanentemente con este título">¶</a></h2>
+</div>
+<div class="section" id="graficas">
+<h2><a class="toc-backref" href="#id11">Gráficas</a><a class="headerlink" href="#graficas" title="Enlazar permanentemente con este título">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ts</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">1000</span><span class="p">),</span> <span class="n">index</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="s2">&quot;1/1/2000&quot;</span><span class="p">,</span> <span class="n">periods</span><span class="o">=</span><span class="mi">1000</span><span class="p">))</span>
@@ -3024,9 +3157,9 @@ Freq: D, dtype: float64
 <img alt="../../_images/pandas_rapido_54_0.png" src="../../_images/pandas_rapido_54_0.png" />
 </div>
 </div>
-</section>
-<section id="guardar">
-<h2><a class="toc-backref" href="#toc-entry-12" role="doc-backlink">Guardar</a><a class="headerlink" href="#guardar" title="Enlazar permanentemente con este título">¶</a></h2>
+</div>
+<div class="section" id="guardar">
+<h2><a class="toc-backref" href="#id12">Guardar</a><a class="headerlink" href="#guardar" title="Enlazar permanentemente con este título">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;foo.csv&quot;</span><span class="p">)</span>
@@ -3041,8 +3174,8 @@ Freq: D, dtype: float64
 </div>
 </div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -3066,36 +3199,42 @@ Freq: D, dtype: float64
 
               </div>
               
-        
-        <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="../Notas_Numpy/numpy_rapido.html" title="previous page">NumPy</a>
-    <a class='right-next' id="next-link" href="../Notas_Matplotlib/matplotlib_rapido.html" title="next page">Matplotlib</a>
-
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../Notas_Numpy/numpy_rapido.html" title="anterior página">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">anterior</p>
+            <p class="prev-next-title">NumPy</p>
         </div>
-        
+    </a>
+    <a class='right-next' id="next-link" href="../Notas_Matplotlib/matplotlib_rapido.html" title="siguiente página">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">siguiente</p>
+        <p class="prev-next-title">Matplotlib</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
-    <div class="container">
-      <p>
-        
-          Por Rafael Martínez-Martínez<br/>
-        
-            &copy; Derechos de autor .<br/>
-      </p>
-    </div>
-  </footer>
+    <footer class="footer">
+  <p>
+    
+      Por Rafael Martínez-Martínez<br/>
+    
+        &copy; Derechos de autor .<br/>
+  </p>
+</footer>
 </main>
 
 
       </div>
     </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-    
-  <script src="../../_static/js/index.d3f166471bb80abb5163.js"></script>
-
-
-    
   </body>
 </html>
