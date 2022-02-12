@@ -33,9 +33,22 @@ main.bd-content #main-content h1 {
     color: rgba(157, 36, 73, 1);
 }
 
-#site-navigation h1 {
+#site-title {
     color: rgba(157, 36, 73, 1);
 }
+
+.site-logo {
+    color: rgba(157, 36, 73, 1);
+}
+
+.navbar-brand-box h1{
+    color: rgba(157, 36, 73, 1);
+}
+
+.caption-text {
+    color: rgba(157, 36, 73, 1);
+}
+
 
 .toctree-ki {
     color: rgba(157, 36, 73, 1);

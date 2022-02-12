@@ -2,32 +2,46 @@
 # Learn more at https://jupyterbook.org/customize/toc.html
 #
 
-
-- file: intro
-- file: docs/encuadre
-- file: docs/Navegacion
+format: jb-book
+root: intro
 
 
-- file: Temas/secciones/InicioRapidoModulos
-  sections:
-  - file: Temas/Notas_Numpy/numpy_rapido
-  - file: Temas/Notas_Pandas/pandas_rapido
-  - file: Temas/Notas_Matplotlib/matplotlib_rapido
+parts:
+  - caption: Información general
+    chapters:
+    - file: docs/encuadre
+    - file: docs/Navegacion
+
+  - caption: Requisitos
+    chapters:
+    - file: Temas/secciones/ambientespython
+    - file: Temas/secciones/instalacion
+    - file: Temas/secciones/InicioRapidoModulos
+      sections:
+      - file: Temas/Notas_Numpy/numpy_rapido
+      - file: Temas/Notas_Pandas/pandas_rapido
+      - file: Temas/Notas_Matplotlib/matplotlib_rapido
   
-- file: Temas/Notas_MachineLearning/machine_learning
+  - caption: Introducción Machine Learning
+    chapters:
+    - file: Temas/Notas_MachineLearning/machine_learning
 
-- file: Temas/Notas_AprenSu/apren_su
-- file: Temas/Notas_AprenSu/clasificacion
+  - caption: Aprendizaje supervisado 
+    chapters:
+    - file: Temas/Notas_AprenSu/apren_su
+    - file: Temas/Notas_AprenSu/clasificacion
 
  
-- file: Temas/secciones/Apendices
-  sections:
-  - file: Temas/Notas_Apendices/extracciondatos
-    sections:
-    - file: Temas/Notas_Apendices/ExpresionesRegulares
-    - file: Temas/Notas_Apendices/Scraping
-  - file: Temas/Notas_Apendices/visualizacionkaggle
-    sections:
-    - file: Temas/Notas_Apendices/visualizacionplotly
-    - file: Temas/Notas_Apendices/Tableros
+  - caption: Apéndices
+    chapters:
+    - file: Temas/secciones/Apendices
+      sections:
+      - file: Temas/Notas_Apendices/extracciondatos
+        sections:
+        - file: Temas/Notas_Apendices/ExpresionesRegulares
+        - file: Temas/Notas_Apendices/Scraping
+      - file: Temas/Notas_Apendices/visualizacionkaggle
+        sections:
+        - file: Temas/Notas_Apendices/visualizacionplotly
+        - file: Temas/Notas_Apendices/Tableros
   
