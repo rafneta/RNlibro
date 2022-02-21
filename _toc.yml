@@ -30,6 +30,11 @@ parts:
     chapters:
     - file: Temas/Notas_AprenSu/apren_su
     - file: Temas/Notas_AprenSu/clasificacion
+      sections:
+      - file: Temas/Notas_MIT_Openlearning/Semana01_Ejer
+      - file: Temas/Notas_MIT_Openlearning/Semana01_Tarea
+      - file: Temas/Notas_MIT_Openlearning/Semana02_Tarea
+      
 
  
   - caption: Apéndices

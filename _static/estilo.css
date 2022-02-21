@@ -42,11 +42,11 @@ main.bd-content #main-content h1 {
 }
 
 .navbar-brand-box h1{
-    color: rgba(157, 36, 73, 1);
+    color: rgba(157, 36, 73, 1)  !important;
 }
 
 .caption-text {
-    color: rgba(157, 36, 73, 1);
+    color: rgba(157, 36, 73, 1)  !important;
 }
 
 
