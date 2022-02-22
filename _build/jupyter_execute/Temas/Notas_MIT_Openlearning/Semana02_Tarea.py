@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+# # Tarea Semana 2 (MIT OLL)
+
 # In[2]:
 
 
@@ -281,7 +283,10 @@ theta
 verifica(theta,X,Y)
 
 
-# ## 1.2b) Ejercicio.
+# ## Problemas 7 a 10 
+# 
+# Los problemas 7 a 10 [son programas en colab](https://colab.research.google.com/drive/1kIWGi2TEZ0Agd_qQt1KiD2uZw_5AJFHT)
+# 
 # 
 
 # In[ ]:
