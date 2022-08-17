@@ -189,10 +189,32 @@
    Aprendizaje supervisado
   </a>
  </li>
- <li class="toctree-l1">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../Notas_AprenSu/clasificacion.html">
    Clasificación
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Notas_MIT_Openlearning/Semana01_Ejer.html">
+     Ejercicios semana 1 (MIT OLL)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Notas_MIT_Openlearning/Semana01_Tarea.html">
+     Tarea Semana 1 (MIT OLL)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Notas_MIT_Openlearning/Semana02_Tarea.html">
+     Tarea Semana 2 (MIT OLL)
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
@@ -205,8 +227,8 @@
   <a class="reference internal" href="../secciones/Apendices.html">
    Apéndices
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -215,8 +237,8 @@
     <a class="reference internal" href="../Notas_Apendices/extracciondatos.html">
      Extracción de datos
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-    <label for="toctree-checkbox-3">
+    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <label for="toctree-checkbox-4">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -237,8 +259,8 @@
     <a class="reference internal" href="../Notas_Apendices/visualizacionkaggle.html">
      Visualización de datos
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-    <label for="toctree-checkbox-4">
+    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+    <label for="toctree-checkbox-5">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -366,6 +388,16 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ciencia-de-datos">
+   Ciencia de datos
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   Machine Learning
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#flujo-de-trabajo">
    Flujo de trabajo
   </a>
@@ -391,6 +423,16 @@
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ciencia-de-datos">
+   Ciencia de datos
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   Machine Learning
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#flujo-de-trabajo">
    Flujo de trabajo
   </a>
@@ -408,27 +450,74 @@
 <div class="contents topic" id="contenido">
 <p class="topic-title">Contenido</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="#machine-learning" id="id1">Machine Learning</a></p>
+<li><p><a class="reference internal" href="#machine-learning" id="id2">Machine Learning</a></p>
 <ul>
-<li><p><a class="reference internal" href="#flujo-de-trabajo" id="id2">Flujo de trabajo</a></p></li>
+<li><p><a class="reference internal" href="#ciencia-de-datos" id="id3">Ciencia de datos</a></p></li>
+<li><p><a class="reference internal" href="#id1" id="id4">Machine Learning</a></p></li>
+<li><p><a class="reference internal" href="#flujo-de-trabajo" id="id5">Flujo de trabajo</a></p></li>
 </ul>
 </li>
 </ul>
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="machine-learning">
-<h1><a class="toc-backref" href="#id1">Machine Learning</a><a class="headerlink" href="#machine-learning" title="Enlazar permanentemente con este título">¶</a></h1>
+<h1><a class="toc-backref" href="#id2">Machine Learning</a><a class="headerlink" href="#machine-learning" title="Enlazar permanentemente con este título">¶</a></h1>
+<blockquote>
+<div><p>Alan Turing:  <a class="reference external" href="https://www.csee.umbc.edu/courses/471/papers/turing.pdf">«Computing Machinery and Intelligence»</a> ¿Las máquinas pueden pensar?</p>
+</div></blockquote>
+<blockquote>
+<div><p>«Inteligencia Artificial: Es la ciencia y la ingeniería para fabricar máquinas inteligentes, especialmente programas informáticos inteligentes. Está relacionado con la tarea similar de usar computadoras para comprender la inteligencia humana, pero la IA no tiene que limitarse a métodos que son biológicamente observables. «
+– Jhon MAcCarthy (2004) <a class="reference external" href="https://homes.di.unimi.it/borghese/Teaching/AdvancedIntelligentSystems/Old/IntelligentSystems_2008_2009/Old/IntelligentSystems_2005_2006/Documents/Symbolic/04_McCarthy_whatisai.pdf">WHAT IS ARTIFICIAL INTELLIGENCE?</a></p>
+</div></blockquote>
 <blockquote>
 <div><p>«Machine Learning: Campo de estudio que da a las computadoras la habilidad para aprender sin ser explicitamente programadas»
 – Arthur L. Samuel (1959)</p>
 </div></blockquote>
+<blockquote>
+<div><p>«El aprednizaje denota cambios en el sistema, estos son adaptables en el sentido que permiten al sistema realizar la misma tarea o tareas una y otra vez más eficiente para la misma población»
+– Herbert Alexander Simon (1984)</p>
+</div></blockquote>
+<blockquote>
+<div><p>«Un programa de computadora se dice que aprende de la experiencia E con respecto a alguna  clase de tareas T y una medida de desempeño P y mejora con la experiencia E»
+– Tom M. Mitchell (1998)</p>
+</div></blockquote>
 <p><img alt="" src="https://i0.wp.com/smartboost.com/wp-content/uploads/2020/07/Deep-Learning-vs-Neural-Network.ai-06-2048x1152.png" />
 Tomado de: <em>Deep Learning vs Neural Network: What’s the Difference?</em> <a class="reference external" href="https://smartboost.com/blog/deep-learning-vs-neural-network/"></a></p>
-<p><img alt="" src="https://balkantimes.press/wp-content/uploads/2021/05/mail-2-10.jpg" />
-Tomado de A taxonomy of machine learning and deep learning algorithms</p>
-<p><img alt="" src="https://ars.els-cdn.com/content/image/1-s2.0-S157401372030071X-gr3.jpg" />
-Tomado de Julia language in machine learning: Algorithms, applications, and open issues</p>
+<div class="section" id="ciencia-de-datos">
+<h2><a class="toc-backref" href="#id3">Ciencia de datos</a><a class="headerlink" href="#ciencia-de-datos" title="Enlazar permanentemente con este título">¶</a></h2>
+<p><img alt="" src="https://sitiobigdata.com/wp-content/uploads/2018/08/Los-tres-n%C3%BAcleos-de-Data-Science.png" />
+Tomado de: <a class="reference external" href="https://sitiobigdata.com/2018/08/27/los-tres-nucleos-de-data-science/">Los tres nucleos de Data Science</a></p>
+<p><img alt="" src="https://pbs.twimg.com/media/DzAlXGBWwAAJjdz?format=jpg&amp;name=large" />
+Tomado del siguiente <a class="reference external" href="https://twitter.com/frederikbussler/status/1094415790349127680?lang=es">twit</a></p>
+</div>
+<div class="section" id="id1">
+<h2><a class="toc-backref" href="#id4">Machine Learning</a><a class="headerlink" href="#id1" title="Enlazar permanentemente con este título">¶</a></h2>
+<p><img alt="" src="https://balkantimes.press/wp-content/uploads/2021/05/mail-2-10.jpg" /></p>
+<p>Tomado de <a class="reference external" href="https://balkantimes.press/en/artificial-intelligence-5-a-taxonomy-of-machine-learning-and-deep-learning-algorithms/">A taxonomy of machine learning and deep learning algorithms</a></p>
+<p><img alt="" src="https://ars.els-cdn.com/content/image/1-s2.0-S157401372030071X-gr3.jpg" /></p>
+<p>Tomado de <a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S157401372030071X">Julia language in machine learning: Algorithms, applications, and open issues</a></p>
+<p>Otra definición de ML es la siguiente:</p>
+<blockquote>
+<div><p>«El machine learning es un método de análisis de datos que automatiza  la construcción de modelos analíticos. Es una rama de la inteligencia  artificial basada en la idea de que los sistemas pueden aprender de  datos, identificar patrones y tomar decisiones con mínima intervención  humana»  <a class="reference external" href="https://www.sas.com/es_mx/insights/analytics/machine-learning.html">enlace</a></p>
+</div></blockquote>
+<p>Simplificando bastante esta definición, el ML es un conjunto de  algoritmos diseñados para resolver problemas con el uso de datos. Estos  problemas se pueden clasificar en tres grandes grupos:</p>
+<ul class="simple">
+<li><p><strong>Aprendizaje supervisado.</strong> Un modelo se ajusta  conociendo las entradas y las salidas asociadas. El objetivo es hacer  predicciones en presencia de incertidumbre. Este tipo de aprendizaje se  puede dividir en:</p>
+<ul>
+<li><p><strong>Clasificación.</strong> Predecir respuestas discretas.</p></li>
+<li><p><strong>Regresión.</strong> Predecir respuestas continuas.</p></li>
+</ul>
+</li>
+<li><p><strong>Aprendizaje no supervisado.</strong> Encuentra patrones  intrínsecos en datos de entrada que no estan asociados a ninguna salida. Este tipo de aprendizaje se puede dividir en</p>
+<ul>
+<li><p><strong>Agrupación.</strong> Agrupar los datos de acuerdo a sus características intrínsecas.</p></li>
+<li><p><strong>Reducción de dimensiones.</strong> Reducir el número de características de los datos bajo algún criterio.</p></li>
+</ul>
+</li>
+<li><p><strong>Otros algoritmos de aprendizaje.</strong> Destacan los algoritmos de Reinformcement Learning. Este tipo de algoritmos determinan qué acciones debe escoger un agente  de software en un entorno dado con el fin de maximizar alguna noción de  “recompensa” o premio acumulado.</p></li>
+</ul>
+</div>
 <div class="section" id="flujo-de-trabajo">
-<h2><a class="toc-backref" href="#id2">Flujo de trabajo</a><a class="headerlink" href="#flujo-de-trabajo" title="Enlazar permanentemente con este título">¶</a></h2>
+<h2><a class="toc-backref" href="#id5">Flujo de trabajo</a><a class="headerlink" href="#flujo-de-trabajo" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Dependiendo del problema que se quiera resolver, hay un procedimiento genérico para abordarlo. Existen varias sugerencias y métodos para esto. Pienso que entre más sencillo se piense el procedimiento es mejor de entender, pero sin olvidar que una propuesta de solución se puede complicar de distintas formas.</p>
 <p><img alt="" src="https://miro.medium.com/max/1400/1*bFZ1dIQ2ROifPt6YlyL6uA.png" /></p>
 <p>Esto no es exclusivo de una área de la ciencia, es un enfoque retomado en distintos áreas (Diseño mecatrónico, telmática, Biónica, Administración, etc.)</p>
