@@ -29,6 +29,10 @@ parts:
   - caption: Aprendizaje supervisado 
     chapters:
     - file: Temas/Notas_AprenSu/apren_su
+    - file: Temas/Notas_AprenSu/regresion
+      sections:
+      - url: https://colab.research.google.com/drive/1hBWjZCUJ_pQq_uHBvo83nE2EUWQGY8Mc?usp=sharing
+        title: Regresión Linea, SVM-R, Árboles-R, Vecinos-R
     - file: Temas/Notas_AprenSu/clasificacion
       sections:
       - file: Temas/Notas_MIT_Openlearning/Semana01_Ejer
