@@ -49,4 +49,7 @@ parts:
         sections:
         - file: Temas/Notas_Apendices/visualizacionplotly
         - file: Temas/Notas_Apendices/Tableros
+    - url: https://colab.research.google.com/drive/1OX_PnsIHeH8k1sCbUnlQyFj6imqG0Wmx?usp=sharing
+      title: Preprocesamiento de datos
+    
   
